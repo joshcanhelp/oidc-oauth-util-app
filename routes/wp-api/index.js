@@ -79,12 +79,8 @@ router.post(postRoute, requiresAuth(), async (request, response, next) => {
     );
   }
 
-  let {
-    token_type,
-    isExpired,
-    refresh,
-    access_token,
-  } = request.oidc.accessToken;
+  let { token_type, isExpired, refresh, access_token } =
+    request.oidc.accessToken;
 
   if (isExpired()) {
     ({ access_token } = await refresh());

@@ -1,10 +1,5 @@
-const {
-  API2_BASE_URL,
-  APP_PORT,
-  APP_BASE_URL,
-  HTTPS_PORT,
-  ISSUER_BASE_URL,
-} = process.env;
+const { API2_BASE_URL, APP_PORT, APP_BASE_URL, HTTPS_PORT, ISSUER_BASE_URL } =
+  process.env;
 
 const getApi2Url = (path = "") => {
   return (API2_BASE_URL ? API2_BASE_URL : ISSUER_BASE_URL) + "/api/v2/" + path;
